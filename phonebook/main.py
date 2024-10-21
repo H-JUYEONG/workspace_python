@@ -1,9 +1,9 @@
+import phonebookdao as dao
+
 print("********************************************")
 print("*          전화번호 관리 프로그램          *")
 print("********************************************")
 print("")
-
-file_path = "C:\\javaStudy\\workspace_python\\Ex02\\PhoneDB.txt"
 
 while True:
     print("1.리스트  2.등록  3.삭제  4.검색  5.종료")
@@ -11,10 +11,32 @@ while True:
     num = int(input(">메뉴번호: "))
 
     if num == 1:
+        print("<1.리스트>")
+        dao.get_person_list()
 
-        with open(file_path, "r", encoding="utf-8") as file:
-            content = file.read()  # 전체 내용 읽기
-            print(content)
     elif num == 2:
-        with open(file_path, "w", encoding="utf-8") as file:
-            file.write("학교종이 땡땡땡\n")
+        print("<2.등록>")
+        name = input(">이름: ")
+        hp = input(">휴대전화: ")
+        company = input(">회사전화: ")
+        dao.add_person(name, hp, company)
+
+    elif num == 3:
+        print("<3.삭제>")
+        del_num = int(input(">번호: "))
+        dao.del_person(del_num)
+
+    elif num == 4:
+        print("<4.검색>")
+        keyword = input("이름: ")
+        dao.get_keyword_list(keyword)
+
+    elif num == 5:
+        print("")
+        print("********************************************")
+        print("*                감사합니다                 *")
+        print("********************************************")
+        print("")
+        break
+    else:
+        print("[다시 입력해 주세요.]")
