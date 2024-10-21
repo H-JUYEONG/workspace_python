@@ -1,8 +1,9 @@
-animal_list = ["cat", "cow", "tiger"]
+num = input("숫자를 입력하세요\n")
+int_num = int(num)
 
-for animal in animal_list:
-    print(animal)
-print("-----------")
-
-for no in range(0, 9, 2):
-    print(no)
+if int_num > 0:
+    print("양수")
+elif int_num < 0:
+    print("음수")
+else:
+    print("0입니다.")

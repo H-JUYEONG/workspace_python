@@ -2,6 +2,7 @@
 import mysql.connector
 from mysql.connector import Error
 
+
 try:
     # 1.연결/컨넥션 얻기
     conn = mysql.connector.connect(
@@ -28,12 +29,14 @@ try:
     conn.commit()  # 반영(실제)  리턴값은 없다
 
     # 4.결과처리
-    print(f"{cursor.rowcount}개 저장")
+    print(f"{cursor.rowcount}개 등록되었습니다.")
 
 except Error as e:
     print(f"데이터베이스 오류: {e}")
 
 finally:
     # 5.자원정리
-    conn.close()
-    cursor.close()
+    if cursor is not None:
+        cursor.close()
+    if conn is not None:
+        conn.close()

@@ -1,3 +1,6 @@
+PI = 3.14
+
+
 # 더하기 함수
 def plus(a, b):
     return a + b
@@ -20,8 +23,11 @@ def div(a, b):
 
 # 원의 넓이
 def area_circle(r):
-    return 3.14 * r**2
+    return PI * r**2
 
 
-# print(plus(55, 65))
-print(__name__)
+# 이파일을 실행일때만 실행됨
+if __name__ == "__main__":
+    print("=============================")
+    print(plus(55, 66))
+    print(area_circle(5))

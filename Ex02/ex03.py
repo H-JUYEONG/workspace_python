@@ -1,45 +1,72 @@
-a = {}  # 생성방법
+# 딕션어리  키-값
 
-# 추가
-a["r38"] = "빅데이타"
-a["r32"] = "c언어"
+# =딕션어리 생성==========================================
+a = {}
+
+# "r38" "빅데이터반"
+a["r38"] = "빅데이터반"
+a["r32"] = "풀스택반"
+a["r30"] = "진소영"
 print(a)
+print(type(a))  # <class 'dict'>
 
-# 생성방법
 d = {"basketball": 5, "soccer": 11, "baseball": 9}
 d["volleyball"] = 6
 print(d)
 
-# 값출력
-print(d["basketball"])
-print(d.get("basketball"))
+# =딕션어리 값 출력==========================================
+print(a["r30"])
+print(d["soccer"])
+# print(d.get("soccer"))
 
-d = {"basketball": 5, "soccer": 11, "baseball": 9}
-del d["basketball"]
+# =딕션어리 값 삭제->키==========================================
+print(d)
+# del(d["soccer"])
+d.pop("soccer")
 print(d)
 
+print("#=딕션어리 값 삭제(전체)==================================")
 d = {"basketball": 5, "soccer": 11, "baseball": 9}
-d = {}
 print(d)
 
-d = {"basketball": 5, "soccer": 11, "baseball": 9}
+# d = {}
 d.clear()
 print(d)
 
-print(type(d))
 
+print("#=찾기==================================")
+d = {"basketball": 5, "soccer": 11, "baseball": 9}
+print(d)
 print(len(d))
-
 print("soccer" in d)
-print("volleyball" not in d)
+print("soccer" not in d)
 
 
-print("---------------------------")
-
+print("#=딕션어리의 키들을 리스트로 반환======================")
 d = {"basketball": 5, "soccer": 11, "baseball": 9}
 keys = d.keys()
-print(keys)
-print(type(keys))
+print(keys, type(keys))
 
 for key in keys:
-    print("{0}:{1}".format(key, d[key]))
+    print(key)
+    print(d[key])
+    # print( f"{key} -> {d[key]}" )
+
+
+print("#=딕션어리의 값들을 리스트로 반환======================")
+
+value_list = d.values()
+print(value_list)
+print(type(value_list))
+
+for value in value_list:
+    print(value)
+
+
+# {'basketball': 5, 'soccer': 11, 'baseball': 9}
+
+# [{'basketball': 5}, {'soccer': 11}, {'baseball': 9} ]
+
+play_list = d.items()
+print(play_list, type(play_list))
+print(type(list(play_list)))
